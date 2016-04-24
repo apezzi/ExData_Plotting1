@@ -1,5 +1,5 @@
-#create data frame from file and subset the data from 1/2/2007 and 2/2/2007
-aux<-read.table(file="household_power_consumption.txt",header=TRUE,sep=";",na="?")
+#create data frame from zip file and subset the data from 1/2/2007 and 2/2/2007
+aux<-read.table(unz("data.zip","household_power_consumption.txt"),header=TRUE,sep=";",na="?")
 df<-subset(aux,aux$Date %in% c("1/2/2007","2/2/2007"))
 
 #create vector POSIXlt class from time adn date fields
